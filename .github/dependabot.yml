@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/packages/recommended"
+    assignees:
+      - "gsipos"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore: "
+    target-branch: "master"
