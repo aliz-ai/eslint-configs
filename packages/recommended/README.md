@@ -8,7 +8,7 @@ You can use it to easily configure eslint on your project according to Aliz stan
 ### 1. Install
 
 ```bash
-npm i @aliz.ai/eslint-config-recommended -D
+npm i "@aliz.ai/eslint-config-recommended" -D
 ```
 
 ### 2. Add to your eslint config
