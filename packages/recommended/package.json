@@ -1,6 +1,6 @@
 {
   "name": "@aliz.ai/eslint-config-recommended",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aliz recommended eslint config",
   "main": "index.mjs",
   "type": "module",
@@ -12,9 +12,11 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "publish": "npm publish --access public"
+    "publish-public": "npm publish --access public"
   },
   "dependencies": {
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.8.0",
     "@tanstack/eslint-plugin-query": "^5.17.22",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
