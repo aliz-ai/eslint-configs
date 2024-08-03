@@ -1,0 +1,36 @@
+{
+  "name": "@aliz.ai/eslint-config-recommended",
+  "version": "1.0.0",
+  "description": "Aliz recommended eslint config",
+  "main": "index.mjs",
+  "type": "module",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "author": "gergely.sipos@aliz.ai",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
+  "dependencies": {
+    "@tanstack/eslint-plugin-query": "^5.17.22",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-risxss": "^2.1.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "eslint-plugin-storybook": "^0.8.0",
+    "typescript-eslint": "^8.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
+  "overrides": {
+    "eslint-plugin-react-hooks": {
+      "eslint": "^9.8.0"
+    }
+  }
+}
