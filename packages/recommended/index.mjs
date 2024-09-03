@@ -1,6 +1,5 @@
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat'
 import js from '@eslint/js'
-import prettier from 'eslint-plugin-prettier/recommended'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import risxss from 'eslint-plugin-risxss'
@@ -8,14 +7,15 @@ import sortImportsEs6Autofix from 'eslint-plugin-sort-imports-es6-autofix'
 import storybook from 'eslint-plugin-storybook'
 import tanstackQuery from '@tanstack/eslint-plugin-query'
 import tseslint from 'typescript-eslint'
+import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   js.configs.recommended,
   ...tseslint.configs.strict,
-  ...fixupConfigRules(prettier),
   react.configs.flat.recommended,
   react.configs.flat['jsx-runtime'],
   ...tanstackQuery.configs['flat/recommended'],
+  eslintConfigPrettier,
   {
     plugins: {
       'sort-imports-es6-autofix': fixupPluginRules(sortImportsEs6Autofix),
