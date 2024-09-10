@@ -1,6 +1,6 @@
 {
   "name": "@aliz.ai/eslint-config-recommended",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Aliz recommended eslint config",
   "main": "index.mjs",
   "type": "module",
