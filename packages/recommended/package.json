@@ -20,7 +20,7 @@
     "@tanstack/eslint-plugin-query": "^5.17.22",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-risxss": "^2.1.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "eslint-plugin-storybook": "^0.9.0",
