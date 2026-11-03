@@ -16,26 +16,24 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.8.0",
-    "@tanstack/eslint-plugin-query": "^5.17.22",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-react": "^7.37.3",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-risxss": "^2.1.0",
-    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
-    "eslint-plugin-storybook": "^9.0.18",
-    "typescript-eslint": "^8.19.0"
+    "@eslint-react/eslint-plugin": "5.28.8",
+    "@eslint/js": "10.0.1",
+    "@tanstack/eslint-plugin-query": "5.105.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-risxss": "2.1.0",
+    "eslint-plugin-simple-import-sort": "14.0.0",
+    "eslint-plugin-storybook": "10.6.4",
+    "typescript-eslint": "8.72.1"
   },
   "peerDependencies": {
-    "eslint": ">= 9"
-  },
-  "overrides": {
-    "eslint-plugin-react-hooks": {
-      "eslint": "^9.8.0"
-    }
+    "eslint": "^10.0.0"
   },
   "devDependencies": {
-    "eslint": "9.14.0"
+    "eslint": "10.13.0",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
   }
 }
