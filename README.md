@@ -15,5 +15,8 @@ npm ci
 npm test
 ```
 
-CI runs these tests on every pull request. Dependencies are pinned to exact versions,
-and both npm (`.npmrc`) and Dependabot only accept releases that are at least 7 days old.
+Development requires the Node.js version in [`.nvmrc`](./.nvmrc) (Node 24 with npm 11.10 or newer, enforced via `devEngines`).
+
+CI runs these tests on every pull request. Dependencies are pinned to exact versions, and only releases at least 7 days old are accepted:
+npm enforces this when resolving (`.npmrc`), Dependabot through its cooldown, and CI checks every new or changed lockfile entry
+with [`scripts/check-lockfile-release-age.mjs`](./scripts/check-lockfile-release-age.mjs).

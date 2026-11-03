@@ -35,5 +35,17 @@
   },
   "engines": {
     "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": ">=11.10.0",
+      "onFail": "error"
+    }
   }
 }
