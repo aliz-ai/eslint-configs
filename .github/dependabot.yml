@@ -6,6 +6,19 @@ updates:
       - "gsipos"
     schedule:
       interval: "daily"
+    cooldown:
+      default-days: 7
+    commit-message:
+      prefix: "chore: "
+    target-branch: "master"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    assignees:
+      - "gsipos"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
     commit-message:
       prefix: "chore: "
     target-branch: "master"

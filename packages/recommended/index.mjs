@@ -1,40 +1,33 @@
-import { fixupConfigRules, fixupPluginRules } from '@eslint/compat'
+import eslintReact from '@eslint-react/eslint-plugin'
 import js from '@eslint/js'
-import react from 'eslint-plugin-react'
+import tanstackQuery from '@tanstack/eslint-plugin-query'
+import eslintConfigPrettier from 'eslint-config-prettier'
 import reactHooks from 'eslint-plugin-react-hooks'
 import risxss from 'eslint-plugin-risxss'
-import sortImportsEs6Autofix from 'eslint-plugin-sort-imports-es6-autofix'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import storybook from 'eslint-plugin-storybook'
-import tanstackQuery from '@tanstack/eslint-plugin-query'
 import tseslint from 'typescript-eslint'
-import eslintConfigPrettier from "eslint-config-prettier";
 
 export default [
   js.configs.recommended,
   ...tseslint.configs.strict,
-  react.configs.flat.recommended,
-  react.configs.flat['jsx-runtime'],
+  eslintReact.configs['recommended-typescript'],
+  reactHooks.configs.flat.recommended,
   ...tanstackQuery.configs['flat/recommended'],
+  ...storybook.configs['flat/recommended'],
   eslintConfigPrettier,
   {
     plugins: {
-      'sort-imports-es6-autofix': fixupPluginRules(sortImportsEs6Autofix),
-      'react-hooks': fixupPluginRules(reactHooks),
-      risxss: fixupPluginRules(risxss),
-      storybook: fixupPluginRules(storybook),
+      'simple-import-sort': simpleImportSort,
+      risxss,
     },
     rules: {
-      'sort-imports-es6-autofix/sort-imports-es6': 'warn',
+      'simple-import-sort/imports': 'warn',
+      'simple-import-sort/exports': 'warn',
       '@tanstack/query/exhaustive-deps': 'off',
       'risxss/catch-potential-xss-react': 'error',
       'no-shadow': 'warn',
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
     },
   },
 ]
