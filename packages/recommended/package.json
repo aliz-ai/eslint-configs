@@ -12,7 +12,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "publish-public": "npm publish --access public"
+    "publish-public": "npm publish --access public",
+    "test": "node --test"
   },
   "dependencies": {
     "@eslint/compat": "^1.1.1",
@@ -33,5 +34,8 @@
     "eslint-plugin-react-hooks": {
       "eslint": "^9.8.0"
     }
+  },
+  "devDependencies": {
+    "eslint": "9.14.0"
   }
 }
