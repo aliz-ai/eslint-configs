@@ -14,9 +14,9 @@ const [lockfilePath, baseRef] = process.argv.slice(2)
 function lockedVersions(lockfileText) {
   const versions = new Map()
   for (const [path, entry] of Object.entries(JSON.parse(lockfileText).packages)) {
-    if (!path || !entry.resolved?.startsWith(REGISTRY)) continue
+    if (!path || entry.link) continue
     const name = entry.name ?? path.slice(path.lastIndexOf('node_modules/') + 'node_modules/'.length)
-    versions.set(`${name}@${entry.version}`, { name, version: entry.version })
+    versions.set(`${name}@${entry.version}`, { name, version: entry.version, resolved: entry.resolved })
   }
   return versions
 }
@@ -41,6 +41,15 @@ const baseVersions = lockedVersions(readBaseLockfile())
 const newVersions = [...lockedVersions(readFileSync(lockfilePath, 'utf8')).entries()]
   .filter(([key]) => !baseVersions.has(key))
   .map(([, locked]) => locked)
+
+// Publish dates are only known for the public registry, so any other source fails the check
+const unsupportedSources = newVersions
+  .filter(locked => !locked.resolved?.startsWith(REGISTRY))
+  .map(locked => `${locked.name}@${locked.version} (resolved: ${locked.resolved ?? 'missing'})`)
+if (unsupportedSources.length > 0) {
+  console.error(`Locked versions not resolved from ${REGISTRY}:\n${unsupportedSources.map(entry => `  ${entry}`).join('\n')}`)
+  process.exit(1)
+}
 
 const versionsByName = Map.groupBy(newVersions, locked => locked.name)
 const cutoff = Date.now() - MIN_AGE_DAYS * 24 * 60 * 60 * 1000

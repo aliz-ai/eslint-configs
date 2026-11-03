@@ -7,7 +7,7 @@ You can use it to easily configure eslint on your project according to Aliz stan
 
 - ESLint 10
 - Node.js `^20.19.0 || ^22.13.0 || >=24`
-- TypeScript `>=4.8.4 <6.1.0` (required by typescript-eslint)
+- TypeScript `>=5.6.0 <6.1.0` (the range supported by both typescript-eslint and the TanStack Query plugin)
 
 ## Installation and Usage
 
